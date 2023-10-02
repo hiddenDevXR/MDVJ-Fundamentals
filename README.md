@@ -34,4 +34,10 @@ For this first iteration it was added:
 <a name="rect_move"/>
 ## Rectilineal movement
 
+![Activity_Follower_01](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/eb45d8d4-1c5d-4aa2-9712-5e93f159bc86)
+
 ES
+
+EN
+
+
