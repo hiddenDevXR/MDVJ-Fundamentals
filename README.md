@@ -7,7 +7,7 @@ Unity version 2021.3.24f1
 
 <a name="act1.1"/>
 
-## Activity 1.1
+# Activity 1.1
 
 ES
 
@@ -34,7 +34,7 @@ For this first iteration it was added:
 
 <a name="rect_move"/>
 
-## Rectilineal movement
+# Rectilineal movement
 
 ![Activity_Follower_01](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/eb45d8d4-1c5d-4aa2-9712-5e93f159bc86)
 ![Activity_Follower_02](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/c3792dd8-e7a6-4ef4-af06-143b74c2a9d4)
