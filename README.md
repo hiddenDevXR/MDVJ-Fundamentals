@@ -40,9 +40,9 @@ ES
 For this excercise we learnt how to move a objetc using different method.
 In this first example we use a the 
 
-> Vector3 direction = goal.position - this.transform.position;
-> float step = speed * Time.deltaTime;
-> this.transform.Translate(direction.normalized * step, Space.World);
+        Vector3 direction = goal.position - this.transform.position;
+        float step = speed * Time.deltaTime;
+        this.transform.Translate(direction.normalized * step, Space.World);
 
 EN
 
