@@ -36,8 +36,8 @@ For this first iteration it was added:
 
 # Rectilineal movement
 
-For this excercise we learnt how to move a object toward a goal using different method.
-In this first example we use the translate method from the tranform component of the game object as follows.
+For this exercise we learned how to move a object toward a goal using different method.
+In this first example we use the translate method from the transform component of the game object as follows.
 
         Vector3 direction = goal.position - this.transform.position;
         float step = speed * Time.deltaTime;
@@ -45,8 +45,7 @@ In this first example we use the translate method from the tranform component of
 
 ![Activity_Follower_01](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/eb45d8d4-1c5d-4aa2-9712-5e93f159bc86)
 
-After that by using the look at method we manage to make the game object to face the goal where it moving. 
-By using the 'LookAt' method in the update, the object continoysly faces the goal.
+By using the 'LookAt' method we manage to make the game object to face the goal where it moving. 
 
         this.transform.LookAt(goal.position);
         ...
