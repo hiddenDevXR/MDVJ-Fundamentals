@@ -9,6 +9,8 @@ Unity version 2021.3.24f1
 
 [Rectilinear Movement 1.2](#rect_move_2)
 
+[GLFS Excercise](#glfs_ex)
+
 <a name="act1.1"/>
 
 # Activity 1.1
@@ -130,6 +132,11 @@ Finally, by using adding and using the rigidbody component on a cylinder we move
         
 ![Activity_3_physics](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/c375687f-ac23-43ca-8078-c15e5ec807d0)
 
+<a name="glfs_ex"/>
 
+# GLFS Exercise
 
+Small exercise to learn how to use GLFS tracking.
+For this test I'm tracking jpg and hdr files.
 
+![gits](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/1afcab8f-8c0e-48f7-b568-97df561769b2)
