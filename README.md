@@ -71,12 +71,45 @@ Itwas also implemented a system that when the player collides with the cyllinder
 
 ## Part I
 
+We improved over the last implementation of the rectilinear movement by adding a smooth rotation towards the target that the object is following.
+To achieve this we use the Quaternion.Slerp method as follows.
 
-Slerp
+        void ApplySlerpMovement()
+        {
+            Vector3 direction = goal.position - this.transform.position;
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * rotationSpeed);
+
+            float step = speed * Time.deltaTime;
+
+            if (direction.magnitude > deadZone)
+                this.transform.Translate(0f, 0f, step);
+        }
+
+To avoid jitter we added a if statement ta only allows the object to move if the distance between target and object is greater than a specified radius aka 'deadZone'.
+
 ![Activity_3_slerp](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/2eccf053-df1f-4516-b6c0-109c171828ec)
 
 
 ## Part II
+
+In another excerisise, a waypont systme was creted. In this, the 'WaypointFollower' script recieves a list of gameObjects as waypoints.
+Using the code from the previous part, the player moves towards the waypoint. However a new system was immplemented. When the player
+reaches the current waypoint, the 'SetNewTarget' method changes the objective towards the next gameObject in the list.
+
+        void SetNewTarget()
+        {
+            targetIndex++;
+
+            if(targetIndex >= waypoints.Count)
+                targetIndex = 0;
+
+            currentTarget = waypoints[targetIndex];
+
+            Waypoint waypoint = currentTarget.GetComponent<Waypoint>();
+            if(waypoint != null) 
+                waypoint.SetAsCurrent();
+        }
 
 ![Activity_3_customway](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/758d5c6b-2b06-4419-a119-21f427822ac0)
 
