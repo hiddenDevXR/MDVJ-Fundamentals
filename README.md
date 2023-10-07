@@ -70,13 +70,22 @@ Itwas also implemented a system that when the player collides with the cyllinder
 Slerp
 ![Activity_3_slerp](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/2eccf053-df1f-4516-b6c0-109c171828ec)
 
-waypoint custom
+
+
+
 ![Activity_3_customway](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/758d5c6b-2b06-4419-a119-21f427822ac0)
 
-unity waypoint
+By using Unity's and 'WaypointCircuit' and 'WaypointProgressTracker' scripts we created a circuit that the 'Player' can follow.
+There is a hidden sphere that works as a target that the 'Player' follows. The sphere moves along the circuit when the player comes closer.
+
 ![Activity_3_unitywaypoints](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/a83f0e75-381b-42d5-9a8c-9a4f79f59013)
 
-cylinder physcs
+Finally, by using adding and using the rigidbody component on a cylinder we move the object using the Input axis.
+
+        Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        float step = Time.deltaTime * speed;
+        m_Rigidbody.MovePosition(transform.position + direction * Time.deltaTime * step);
+        
 ![Activity_3_physics](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/c375687f-ac23-43ca-8078-c15e5ec807d0)
 
 
