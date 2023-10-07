@@ -66,6 +66,8 @@ Itwas also implemented a system that when the player collides with the cyllinder
 
 # Rectilineal movement 1.2
 
+## Part I
+
 
 Slerp
 ![Activity_3_slerp](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/2eccf053-df1f-4516-b6c0-109c171828ec)
