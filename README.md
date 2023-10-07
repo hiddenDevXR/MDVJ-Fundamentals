@@ -87,7 +87,7 @@ There is a hidden sphere that works as a target that the 'Player' follows. The s
 
 ![Activity_3_unitywaypoints](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/a83f0e75-381b-42d5-9a8c-9a4f79f59013)
 
-## Part IIII
+## Part IV
 
 Finally, by using adding and using the rigidbody component on a cylinder we move the object using the Input axis.
 
