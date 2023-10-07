@@ -3,7 +3,7 @@ Unity version 2021.3.24f1
 
 ## Table of Contents  
 [Activity 1.1](#act1.1)  
-[Rectilinear Movement 1.1](#rect_move_1)
+[Rectilinear Movement 1.1](#rect_move_1) 
 [Rectilinear Movement 1.2](#rect_move_2)
 
 <a name="act1.1"/>
