@@ -76,14 +76,18 @@ Slerp
 ![Activity_3_slerp](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/2eccf053-df1f-4516-b6c0-109c171828ec)
 
 
-
+## Part II
 
 ![Activity_3_customway](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/758d5c6b-2b06-4419-a119-21f427822ac0)
+
+## Part III
 
 By using Unity's and 'WaypointCircuit' and 'WaypointProgressTracker' scripts we created a circuit that the 'Player' can follow.
 There is a hidden sphere that works as a target that the 'Player' follows. The sphere moves along the circuit when the player comes closer.
 
 ![Activity_3_unitywaypoints](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/a83f0e75-381b-42d5-9a8c-9a4f79f59013)
+
+## Part IIII
 
 Finally, by using adding and using the rigidbody component on a cylinder we move the object using the Input axis.
 
