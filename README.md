@@ -3,7 +3,8 @@ Unity version 2021.3.24f1
 
 ## Table of Contents  
 [Activity 1.1](#act1.1)  
-[Rectilinear Movement](#rect_move)
+[Rectilinear Movement 1.1](#rect_move_1)
+[Rectilinear Movement 1.2](#rect_move_2)
 
 <a name="act1.1"/>
 
@@ -32,9 +33,8 @@ For this first iteration it was added:
 
 ![MDCJ04](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/fad171ce-193f-4ec3-91cd-c4fcc2e2ad94)
 
-<a name="rect_move"/>
-
-# Rectilineal movement
+<a name="rect_move_1"/>
+# Rectilineal movement 1.1
 
 For this exercise we learned how to move a object toward a goal using different method.
 In this first example we use the translate method from the transform component of the game object as follows.
@@ -59,7 +59,8 @@ Itwas also implemented a system that when the player collides with the cyllinder
 
 ![Activity_Follower_03](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/2fb8e0f3-7608-4efb-a25f-104728fbf879)
 
-
+<a name="rect_move_2"/>
+# Rectilineal movement 1.2
 
 
 
