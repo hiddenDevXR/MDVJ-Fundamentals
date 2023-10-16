@@ -9,6 +9,8 @@ Unity version 2021.3.24f1
 
 [Rectilinear Movement 1.2](#rect_move_2)
 
+[Events and Rectilinear Movement](#events_1)
+
 [GLFS Excercise](#glfs_ex)
 
 <a name="act1.1"/>
@@ -131,6 +133,13 @@ Finally, by using adding and using the rigidbody component on a cylinder we move
         m_Rigidbody.MovePosition(transform.position + direction * Time.deltaTime * step);
         
 ![Activity_3_physics](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/c375687f-ac23-43ca-8078-c15e5ec807d0)
+
+<a name="events_1"/>
+
+# Events and Rectilinear movement
+
+![Events_1](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/9666341a-ce55-4ed2-a257-d84e69823271)
+
 
 <a name="glfs_ex"/>
 
