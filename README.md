@@ -138,7 +138,22 @@ Finally, by using adding and using the rigidbody component on a cylinder we move
 
 # Events and Rectilinear movement
 
+## Part I
+
+For this first part we used Unity's Canvas event system and Collision event system.
+
+When the buttons named 'Normal' or 'Turbo' are pressed, these change the speed of the player movement. This uses the button event system to call the method from the player 'SetSpeedTo(int speed)'.
+An
+
+
+
 ![Events_1](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/9666341a-ce55-4ed2-a257-d84e69823271)
+
+
+![Events_2](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/4cba5945-9569-411f-a3f4-49ccae1d6ebb)
+
+
+![Events_3](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/93878899-5f29-4c58-975d-d76be960c6b1)
 
 
 <a name="glfs_ex"/>
