@@ -241,13 +241,39 @@ the player keeps teleporting forever, the exit portal has the spawn point a litt
 ![Events_3](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/93878899-5f29-4c58-975d-d76be960c6b1)
 
 
-## Part IV
+## Part IV & V
 
+By using a button event from the UI. We enable an object to move to a static target in the scene. A boolean value is changed
+to allow the calling of the movement calculations in the 'Update()'.
 
+        void Update()
+        {
+            if (!enable) return;
 
+            this.transform.LookAt(goal.position);
+
+            Vector3 direction = goal.position - this.transform.position;
+
+            float step = speed * Time.deltaTime;
+            this.transform.Translate(direction.normalized * step, Space.World);
+            Debug.DrawRay(this.transform.position, direction, Color.red);
+        }
+
+        public void EnableMovement()
+        {
+            enable = true;
+        }
+        
 ![Events_4](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/f2f29444-7423-41b8-bb97-dcaf40082df5)
 
-## Part V
+And by adding a delegate system, we notify this object when the player enters a specified zone where the object can follow it.
+When the player is out of the zone, we notify the object so this will stop.
+
+    private void Start()
+    {
+        goal.gameObject.GetComponent<PlayerInteractions>().OnEnterZone += EnableMovement;
+        goal.gameObject.GetComponent<PlayerInteractions>().OnExitZone += DisableMovement;
+    }
 
 ![Events_5](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/fd1e71f0-84b0-48d9-bb2b-54117f7eed96)
 
