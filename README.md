@@ -142,24 +142,108 @@ Finally, by using adding and using the rigidbody component on a cylinder we move
 
 For this first part we used Unity's Canvas event system and Collision event system.
 
-When the buttons named 'Normal' or 'Turbo' are pressed, these change the speed of the player movement. This uses the button event system to call the method from the player 'SetSpeedTo(int speed)'.
-An
+When the buttons named 'Normal' or 'Turbo' are pressed, these change the speed of the player movement.
+This uses the button event system to call the method 'SetSpeedTo(int speed)' from the player's speed.
 
+    public void SetSpeedTo(int targetSpeed)
+    {
+        speed = targetSpeed;
+        speedText.text = speed.ToString();
+    }
 
+For the colliion events, by using the 'OnTriggerEnter(Collider other)' we check the tags of the object being collected
+to decide wether to increae the player's score or to reduce it's movement speed.
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Item"))
+        {
+            CollectItem();
+            Destroy(other.gameObject);
+        }
+            
+
+        else if (other.CompareTag("Hazard"))
+        {
+            TakeDamage();
+            Destroy(other.gameObject);
+        }      
+    }
 
 ![Events_1](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/9666341a-ce55-4ed2-a257-d84e69823271)
 
-
 ## Part II
+
+As a next step, we added some obstacles that block the players movement. However, if the player picks a special item
+the obstacles will move of the way of the player when they are near. To achieve this, by using the delegates, we notify the
+obstacles when the player has picked up the item.
+
+        public class PlayerInteractions : MonoBehaviour
+        {
+
+            public delegate void Message();
+            public event Message OnItemTouch;
+
+            ...
+        }
+
+
+        public class Obstacles : MonoBehaviour
+        {  
+            public float speed = 2f;
+            bool escapeEnable =  false;
+
+            void Start()
+            {
+                GameManager._player.GetComponent<PlayerInteractions>().OnItemTouch += BeginEscape;
+            }
+
+            private void Update()
+            {
+                if(escapeEnable)
+                    Escape();
+            }
+
+            public void Escape()
+            {
+                Vector3 direction = GameManager.GetPlayerPosition() - this.transform.position;
+                float step = speed * Time.deltaTime;
+
+                if (Vector3.Distance(GameManager.GetPlayerPosition(), transform.position) < 2f)
+                    this.transform.Translate(-direction.normalized * step, Space.World);
+            }
+
+            public void BeginEscape()
+            {
+                escapeEnable = true;
+            }
+        }
+
 
 ![Events_2](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/4cba5945-9569-411f-a3f4-49ccae1d6ebb)
 
 ## Part III
 
+Another feature was the implemantion of a basic teleportation system through a portal.
+This was easily achieved by chaning player position whe overlaping with a object with the Portal script.
+The portal moves the player to a it's connected end point called 'exit portal'. To avoid a bug where
+the player keeps teleporting forever, the exit portal has the spawn point a little bit away from it's own collider.
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+            other.transform.position = new Vector3(exitPortal.spawnPoint.transform.position.x,
+                                                   other.transform.position.y,
+                                                   exitPortal.spawnPoint.transform.position.z);
+    }
+
+
 ![Events_3](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/93878899-5f29-4c58-975d-d76be960c6b1)
 
 
 ## Part IV
+
+
 
 ![Events_4](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/f2f29444-7423-41b8-bb97-dcaf40082df5)
 
