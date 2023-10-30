@@ -296,3 +296,100 @@ For this test I'm tracking jpg and hdr files.
 
 ![2D_01](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/f295cf6e-2448-4539-ae2c-7b1ff62ed959)
 
+For this prototype first we nedeed to achieve a 2D player movement controller.
+This was achieved using Unity's Rigidbody2D.
+
+For the horizontal movement I used the 'Input.GetAxis("Horizontal")' to get the movement direction on the X axis.
+
+        float step = Time.deltaTime * speed;
+        Vector3 direction = new Vector3(Input.GetAxis("Horizontal") * step, m_rigidbody.velocity.y, 0f);
+
+We ask if the X value of the direction is lesser or grater tha 0 to know the direction that the sprite should be facing.
+By using the SpriteRenderer component we can flip the sprite.
+
+        if (direction.x != 0f)
+        {
+                if(direction.x < 0f)
+                    m_spriteRenderer.flipX = true;
+                else if(direction.x > 0f)
+                    m_spriteRenderer.flipX = false;
+        }
+
+To calculate the jump, we receive the input from the 'SPACE' key. When pressed, we apply a force in the Y axis.
+To have a more smooth interaction between the key and the game, the input shoul be checked on the 'Update()' instead than the 'FixedUpdate()'.
+
+        private void Update()
+        {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    m_rigidbody.AddForce(new Vector2(m_rigidbody.velocity.x, jumpForcer));
+                    ...
+                }
+        }
+
+Finally we apply on the 'FixedUpate()' the movement direction calculated both in this method and in the 'Update()'.
+
+        m_rigidbody.velocity = direction;
+
+To have the animations respond to the input. We create a Animator Controller that has an integer parameter named "State".
+By switching te state, we change the animation being player. In the scripts the states integers are defined by a enum.
+
+        enum PlayerState { Idle, Run, Jump, Dead };
+        PlayerState currentState = PlayerState.Idle;
+
+The full logic looks like this.
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                m_rigidbody.AddForce(new Vector2(m_rigidbody.velocity.x, jumpForcer));
+                SetAnimation(PlayerState.Jump);
+                grounded = false;
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            float step = Time.deltaTime * speed;
+            Vector3 direction = new Vector3(Input.GetAxis("Horizontal") * step, m_rigidbody.velocity.y, 0f);
+    
+            if (direction.x != 0f)
+            {
+                if(direction.x < 0f)
+                    m_spriteRenderer.flipX = true;
+                else if(direction.x > 0f)
+                    m_spriteRenderer.flipX = false;
+
+                if (grounded)
+                    SetAnimation(PlayerState.Run);
+
+                else
+                    SetAnimation(PlayerState.Jump);
+            }
+
+            if (direction.x == 0f && grounded)
+                SetAnimation(PlayerState.Idle);
+
+            m_rigidbody.velocity = direction;
+        }
+
+        private void SetAnimation(PlayerState state)
+        {
+            m_animator.SetInteger("State", (int)state);
+        }
+
+
+To have the interaction between the enemy 'Zombie' and our player. I created a script for the Zombie. This script get the triggers when
+the Player overlaps with the zombie trigger collider.
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            m_animator.SetInteger("State", (int)EnemyState.Attack);
+            Controller_2D playerController = other.GetComponent<Controller_2D>();
+            playerController.TakeDamage();
+        }       
+    }
+
