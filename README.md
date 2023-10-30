@@ -13,6 +13,8 @@ Unity version 2021.3.24f1
 
 [GLFS Excercise](#glfs_ex)
 
+[Introduction Game Development using 2D Sprites](#dev_2D)
+
 <a name="act1.1"/>
 
 # Activity 1.1
@@ -286,3 +288,11 @@ Small exercise to learn how to use GLFS tracking.
 For this test I'm tracking jpg and hdr files.
 
 ![gits](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/1afcab8f-8c0e-48f7-b568-97df561769b2)
+
+
+<a name="dev_2D"/>
+
+# Introduction Game Development using 2D Sprites
+
+![2D_01](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/f295cf6e-2448-4539-ae2c-7b1ff62ed959)
+
