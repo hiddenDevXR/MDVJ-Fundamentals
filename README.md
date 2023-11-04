@@ -430,8 +430,8 @@ I am using the same configuration as before for both objects (BoxCollider2D + Ri
 
 ![C_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/0ca51d56-6fd2-4ec1-8e16-7c7500bbe4ec)
 
-I added a Text on the Canvas so I can debug directly to the game viewport. When the obeject with the controller script collides
-with anothe one, it displays a message in the screen.
+I added a Text on the Canvas so I can debug directly to the game viewport. When the object with the controller script collides
+with another one, it displays a message in the screen.
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
@@ -445,16 +445,52 @@ with anothe one, it displays a message in the screen.
 
 In this case, the ground only  has Collider, not Rigidbody.
 
-## C. Two objects with physics (Rigidbody 2D).
+## D. Two objects have with physics (Rigidbody 2D), but one has more mass than the other.
+
+I increased the mass of the RigidBody2D on the red box to 100. Now, the red object does not move so easily when 
+pushed by the blue box.
 
 ![D_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/8bf09531-00f2-453f-94be-712f6b061804)
 
+## E. One of the objects is a 'trigger'.
+
 ![E_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/536aad92-89fb-47c5-9661-0494a45d72f7)
+
+Enabeling the 'Is Trigger' checkbox in the red box Collider now allows to overlap with the blue box.
+
+         private void OnTriggerEnter2D(Collider2D collision)
+         {
+             PhysicsObstacle obstacle = collision.gameObject.GetComponent<PhysicsObstacle>();
+        
+             if (obstacle != null)
+             {
+                 UILog.text = "Debug Log: " + "I am overlaping a Trigger named " + "'" + obstacle.GetName() + "'.";
+             }
+         }
+
+I had to disable the Rigidbody for the red box to stop it's free fall.
+
+## F. Two objects have with physics (Rigidbody 2D), but one is also a 'trigger'.
 
 ![F_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/0c0134e6-6fa1-4a2a-b9ef-366071c944b8)
 
+I just enable again the Rigidbody for the red box. It still overlaps with the blue box, so it displays the debug message.
+
+## G. One object is 'Kinematic'.
+
+By chaging the body type of the red box to 'Kinematic', no does not move when pushed by the blue box (or any object).
+
 ![G_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/bc0c234d-95aa-4cab-a364-3efc0f1b9bdc)
 
+Finally, here is a small simulation where:
+
+- There is a Static object that acts as an impassable barrier (red boxes).
+- Exist an Area in which objects that fall into it are propelled forward (Green area with yellow arrow).
+- Object that is dragged by another object at a fixed distance (Blue box pushing orange box).
+- Object that when colliding with others follows a totally physical behavior (Orange box, gray box and blue box).
+
+The orange box physcs layer allows it to interact with the blue and red boxes but it does not react with the gray box that is in another physics layer.
+However, the blue box can interact with the gray one.
 
 https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/e0719526-9197-43e0-bdee-734121df67c5
 
