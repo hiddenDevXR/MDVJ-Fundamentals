@@ -15,7 +15,8 @@ Unity version 2021.3.24f1
 
 [Introduction to 2D Game Development | Sprites](#dev_2D)
 
-[Introduction to 2D Game Development | Physics and Maps](#dev_2D_Physics)
+[Introduction to 2D Game Development | Physics and Maps](#2D_Phyxs)
+
 
 <a name="act1.1"/>
 
@@ -395,7 +396,9 @@ the Player overlaps with the zombie trigger collider.
         }       
     }
 
-<a name="#dev_2D_Physics"/>
+
+
+<a name="#2D_Phyxs"/>
 
 # Introduction to 2D Game Development | Physics and Maps
 
