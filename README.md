@@ -13,7 +13,9 @@ Unity version 2021.3.24f1
 
 [GLFS Excercise](#glfs_ex)
 
-[Introduction Game Development using 2D Sprites](#dev_2D)
+[Introduction to 2D Game Development | Sprites](#dev_2D)
+
+[Introduction to 2D Game Development | Physics and Maps](#dev_2D_Physics)
 
 <a name="act1.1"/>
 
@@ -292,7 +294,7 @@ For this test I'm tracking jpg and hdr files.
 
 <a name="dev_2D"/>
 
-# Introduction Game Development using 2D Sprites
+# Introduction to 2D Game Development | Sprites
 
 ![2D_01](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/f295cf6e-2448-4539-ae2c-7b1ff62ed959)
 
@@ -392,4 +394,30 @@ the Player overlaps with the zombie trigger collider.
             playerController.TakeDamage();
         }       
     }
+
+<a name="#dev_2D_Physics"/>
+
+# Introduction to 2D Game Development | Physics and Maps
+
+
+![B_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/109b6cce-1557-471d-8780-2d396f49fe83)
+
+![C_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/0ca51d56-6fd2-4ec1-8e16-7c7500bbe4ec)
+
+![D_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/8bf09531-00f2-453f-94be-712f6b061804)
+
+![E_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/536aad92-89fb-47c5-9661-0494a45d72f7)
+
+![F_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/0c0134e6-6fa1-4a2a-b9ef-366071c944b8)
+
+![G_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/bc0c234d-95aa-4cab-a364-3efc0f1b9bdc)
+
+
+https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/e0719526-9197-43e0-bdee-734121df67c5
+
+
+
+
+
+
 
