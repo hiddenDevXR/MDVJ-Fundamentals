@@ -396,12 +396,12 @@ the Player overlaps with the zombie trigger collider.
         }       
     }
 
+Next chapter I'll be working with 2D Physics and Tiles.
 
 
 <a name="#2D_Phyxs"/>
 
 # Introduction to 2D Game Development | Physics and Maps
-
 
 ![B_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/109b6cce-1557-471d-8780-2d396f49fe83)
 
