@@ -400,7 +400,6 @@ Next chapter I'll be working with 2D Physics and Tiles.
 
 
 <a name="#2D_Phyxs"/>
-
 # Introduction to 2D Game Development | Physics and Maps
 
 asdasd
