@@ -404,14 +404,48 @@ Next chapter I'll be working with 2D Physics and Tiles.
 
 # Introduction to 2D Game Development | Physics and Maps
 
-asdasd
-as
-das
-dasasd
+This time I'll be working with Unity's 2D physics engine and Tile maps. I had to implement the next scenearios.
+
+## A. Two Objects with no physics.
+
+![a_nophysics](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/ea83a249-c89b-4647-957b-071e4524dc15)
+
+## B. Only one object with physics (Rigidbody 2D).
 
 ![B_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/109b6cce-1557-471d-8780-2d396f49fe83)
 
+For this I added a BoxCollider2D and a Rigidbody2D to one of the sprites in the scene. I also made a simple controller
+so I can move it around the scene.
+
+        private void FixedUpdate()
+        {
+            float step = Time.deltaTime * speed;
+            Vector3 direction = new Vector3(Input.GetAxis("Horizontal") * step, m_rigidbody.velocity.y, 0f);
+            m_rigidbody.velocity = direction;
+        }
+
+## C. Two objects with physics (Rigidbody 2D).
+
+I am using the same configuration as before for both objects (BoxCollider2D + Rigidbody2d). Only one has the controller script.
+
 ![C_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/0ca51d56-6fd2-4ec1-8e16-7c7500bbe4ec)
+
+I added a Text on the Canvas so I can debug directly to the game viewport. When the obeject with the controller script collides
+with anothe one, it displays a message in the screen.
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            PhysicsObstacle obstacle = collision.gameObject.GetComponent<PhysicsObstacle>();
+        
+            if (obstacle != null)
+            {
+                UILog.text = "Debug Log: " + "I am colliding with " + "'" + obstacle.GetName();
+            }
+        }
+
+In this case, the ground only  has Collider, not Rigidbody.
+
+## C. Two objects with physics (Rigidbody 2D).
 
 ![D_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/8bf09531-00f2-453f-94be-712f6b061804)
 
