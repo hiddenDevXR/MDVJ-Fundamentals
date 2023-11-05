@@ -498,10 +498,12 @@ https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/e0719526-9197-4
 
 ## Maps
 
+As a second part of this activity, I learnt how to work with tile maps in Unity. First I created a basic level
+using a palette. After that I set the collitions for the level using a Tilemap collider and a composite collider.
+
+I am using again the 
+
 https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/12e6e5b7-e44b-408e-9148-363fbdc4c602
-
-
-
 
 
 
