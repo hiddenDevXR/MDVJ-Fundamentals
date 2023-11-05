@@ -404,13 +404,15 @@ Next chapter I'll be working with 2D Physics and Tiles.
 
 # Introduction to 2D Game Development | Physics and Maps
 
+## Physics
+
 This time I'll be working with Unity's 2D physics engine and Tile maps. I had to implement the next scenearios.
 
-## A. Two Objects with no physics.
+### A. Two Objects with no physics.
 
 ![a_nophysics](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/ea83a249-c89b-4647-957b-071e4524dc15)
 
-## B. Only one object with physics (Rigidbody 2D).
+### B. Only one object with physics (Rigidbody 2D).
 
 ![B_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/109b6cce-1557-471d-8780-2d396f49fe83)
 
@@ -424,7 +426,7 @@ so I can move it around the scene.
             m_rigidbody.velocity = direction;
         }
 
-## C. Two objects with physics (Rigidbody 2D).
+### C. Two objects with physics (Rigidbody 2D).
 
 I am using the same configuration as before for both objects (BoxCollider2D + Rigidbody2d). Only one has the controller script.
 
@@ -445,14 +447,14 @@ with another one, it displays a message in the screen.
 
 In this case, the ground only  has Collider, not Rigidbody.
 
-## D. Two objects have with physics (Rigidbody 2D), but one has more mass than the other.
+### D. Two objects have with physics (Rigidbody 2D), but one has more mass than the other.
 
 I increased the mass of the RigidBody2D on the red box to 100. Now, the red object does not move so easily when 
 pushed by the blue box.
 
 ![D_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/8bf09531-00f2-453f-94be-712f6b061804)
 
-## E. One of the objects is a 'trigger'.
+### E. One of the objects is a 'trigger'.
 
 ![E_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/536aad92-89fb-47c5-9661-0494a45d72f7)
 
@@ -470,13 +472,13 @@ Enabeling the 'Is Trigger' checkbox in the red box Collider now allows to overla
 
 I had to disable the Rigidbody for the red box to stop it's free fall.
 
-## F. Two objects have with physics (Rigidbody 2D), but one is also a 'trigger'.
+### F. Two objects have with physics (Rigidbody 2D), but one is also a 'trigger'.
 
 ![F_Phyxs](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/0c0134e6-6fa1-4a2a-b9ef-366071c944b8)
 
 I just enable again the Rigidbody for the red box. It still overlaps with the blue box, so it displays the debug message.
 
-## G. One object is 'Kinematic'.
+### G. One object is 'Kinematic'.
 
 By chaging the body type of the red box to 'Kinematic', no does not move when pushed by the blue box (or any object).
 
@@ -493,6 +495,12 @@ The orange box physcs layer allows it to interact with the blue and red boxes bu
 However, the blue box can interact with the gray one.
 
 https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/e0719526-9197-43e0-bdee-734121df67c5
+
+## Maps
+
+https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/12e6e5b7-e44b-408e-9148-363fbdc4c602
+
+
 
 
 
