@@ -498,12 +498,58 @@ https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/e0719526-9197-4
 
 ## Maps
 
-As a second part of this activity, I learnt how to work with tile maps in Unity. First I created a basic level
-using a palette. After that I set the collitions for the level using a Tilemap collider and a composite collider.
-
-I am using again the 
-
 https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/12e6e5b7-e44b-408e-9148-363fbdc4c602
+
+As a second part of this activity, I learnt how to work with tile maps in Unity. First I created a basic level
+using a palette. After that I set the collitions for the level using a Tilemap Collider 2D and a Composite Collider 2D.
+For the movement of the player and it's animation system I am using the same controller I created for a past exercise.
+However I did some changes to add new functionalities, like picking up items. By using Unity triggers, when my player can collect items
+and increas it's score.
+
+I also defined a delegate so the player can let know other object in the scene when it collected all of the items.
+
+        public delegate void Message();
+        public event Message OnAllItemsPicked;
+
+        ...
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("Item"))
+            {
+                itemsPicked++;
+                itemScore.text = itemsPicked.ToString();
+                Destroy(collision.gameObject);
+        
+                if (itemsPicked == 5)
+                {
+                    OnAllItemsPicked();
+                    jumpForcer *= 1.5f;
+                }
+                    
+            }
+        }
+
+When 5 itmes are collected, the delegate event 'OnAllItemsPicked()' is called. This event is recieved by the 'Platform' script
+and reduces the alpha channel of the sprite renderer and also changes the physics layer.
+The object with this script is the one that is blocking the player to go to the next level through a hole in the ground.
+
+        [SerializeField]
+        private SpriteRenderer m_renderer;
+        
+        public Controller_2D robot;
+        
+        void Start()
+        {
+            m_renderer = GetComponent<SpriteRenderer>();
+            robot.OnAllItemsPicked += ChangeLayer;
+        }
+        
+        void ChangeLayer()
+        {
+            m_renderer.color = new Color(1f, 1f, 1f, 0.5f);
+            gameObject.layer = 9;
+        }
 
 
 
