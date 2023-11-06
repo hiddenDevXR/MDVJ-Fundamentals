@@ -551,7 +551,33 @@ The object with this script is the one that is blocking the player to go to the 
             gameObject.layer = 9;
         }
 
+For the moving platform on the 'FixedUpdate()' we use a Sin() function to move the platform along the Y axis. We achieve the player
+to stay on the platform by making the platform it's parent when 'OnTriggerEnter2D' and unparenting ir when 'OnTriggerExit2D'.
 
+        private void FixedUpdate()
+        {
+            Vector2 direction = new Vector2(initialPosition.x, initialPosition.y + Mathf.Sin(Time.fixedTime) * range);
+        
+            m_rigibody.position = direction;
+        }
+        
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                Transform otherTransform = collision.transform;
+                otherTransform.parent = transform;
+            }
+        }
+        
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                Transform otherTransform = collision.transform;
+                otherTransform.parent = null;
+            }
+        }
 
 
 
