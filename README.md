@@ -634,26 +634,75 @@ For the thirt type, the scroll is achieved by offseting the texture parameter in
             meshRenderer.material.SetVector("_Offset", new Vector2(Offset, 0));
         }
 
+
 ### Parallax
+
+For the parallax effect we simply move the background layers at different velocities. The next gifs shows two methods:
+One where the whole Plane is moved.
 
 ![Fondo_4](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/6c8c31ed-e0fd-45eb-a8d7-46dc07801556)
 
+And another where only the texture is moved by using it's offset.
+
 ![Fondo_5](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/17f57062-ef38-4a17-aab3-ddfc521d2ee6)
+
+
+### Cinemachine
+
+Using Cinemachine allows to have a more smooth and nice camera movement. Here are two examples with different zones to follow the player.
 
 ![Fondo_Cam_1](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/4d1d2248-1f9a-4099-baac-fabdfabbf51f)
 
 ![Fondo_Cam_2](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/3dcc4e7d-861d-476c-b58e-f283a21c8a2f)
 
+### Camera limits
+
+By suing camera limits we can stop the camera to move to zones that need to be always offscreen. 
+
 ![Fondo_Coll_1](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/58a6bbd6-e88e-4407-827b-291809c14259)
 
+In this example, the camera does not move when the player falls through the pit.
+
 ![Fondo_Coll_2](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/e50274de-bff6-46d5-9293-df95582b7ff9)
+
+### Target Group
+
+Implementation of target groups using two different weights.
 
 ![Group_1](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/5727ef84-7848-46ca-b647-be8032f748ef)
 
 ![Group_2](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/6dcef492-bb3d-43d0-98c0-d6823fc7ee99)
 
+
+### Zoom
+
+This is a simple zoom control implementation. It changes the camera Ortographic Size by pressing 'W' or 'S'.
+
 ![Zoomshish](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/0ad7f125-76d1-42d5-a5ea-00dcd65bd759)
+
+        void Update()
+        {
+            float zoom = Input.GetAxis("Vertical") * Time.deltaTime * 5f;
+            virtualCamera.m_Lens.OrthographicSize += zoom;
+        }
+
+### Camera change
+
+A smooth change between cameras using cinemachine is easily achieved by simple turning off and on the cameras.
 
 ![Change](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/3cfe03cd-8027-4139-bf1d-3f8878ed9f74)
 
-
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                vCam1.SetActive(true);
+                vCam2.SetActive(false);
+            }
+        
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                vCam1.SetActive(false);
+                vCam2.SetActive(true);
+            }
+        }
