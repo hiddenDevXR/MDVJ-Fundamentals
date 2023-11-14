@@ -650,7 +650,7 @@ For the thirt type, the scroll is achieved by offseting the texture parameter in
 
 ![Group_1](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/5727ef84-7848-46ca-b647-be8032f748ef)
 
-![Group_2](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/b4d67266-c507-4187-bf01-840d64aa200c)
+![Group_2](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/6dcef492-bb3d-43d0-98c0-d6823fc7ee99)
 
 ![Zoomshish](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/0ad7f125-76d1-42d5-a5ea-00dcd65bd759)
 
