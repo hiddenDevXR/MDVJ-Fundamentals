@@ -17,7 +17,7 @@ Unity version 2021.3.24f1
 
 [Introduction to 2D Game Development | Physics and Maps](#introduction-to-2d-game-development--physics-and-maps)
 
-
+[Introduction to 2D Game Development | Physics and Maps](#introduction-to-2d-game-development--background-and-camera)
 
 <a name="act1.1"/>
 
@@ -580,5 +580,17 @@ to stay on the platform by making the platform it's parent when 'OnTriggerEnter2
         }
 
 
+<a name="#introduction-to-2d-game-development--background-and-camera"/>
 
+# Introduction to 2D Game Development | Background and Camera
+
+![Fondo_1](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/2ec99929-1b74-43e5-8e85-bb9fe87714b6)
+
+![Fondo_2](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/5fb4faa5-48d5-453f-b05e-12c2ff38fa1e)
+
+![Fondo_3](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/0a69a7ef-23da-4cf6-8aca-c005f6ab2c48)
+
+![Fondo_4](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/6c8c31ed-e0fd-45eb-a8d7-46dc07801556)
+
+![Fondo_5](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/17f57062-ef38-4a17-aab3-ddfc521d2ee6)
 
