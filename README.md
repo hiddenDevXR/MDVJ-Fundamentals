@@ -586,7 +586,7 @@ to stay on the platform by making the platform it's parent when 'OnTriggerEnter2
 
 ## Background scroll
 
-Implementations of two scrolls methods. The first type has two images, once one gets out of the screen it moves back to the
+Implementations of three scrolls methods. The first type has two images, once one gets out of the screen it moves back to the
 edge of the stack so it can be ready to scroll again in front of the camera.
 
 ![Fondo_1](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/2ec99929-1b74-43e5-8e85-bb9fe87714b6)
@@ -621,8 +621,20 @@ of the moving camera.
                 }
             }
         }
+        
+For the thirt type, the scroll is achieved by offseting the texture parameter in the material.
 
 ![Fondo_3](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/0a69a7ef-23da-4cf6-8aca-c005f6ab2c48)
+
+        void Update()
+        {
+            float step = Time.deltaTime * speedOffset;
+            float horizontal = Input.GetAxis("Horizontal") * step;
+            Offset += horizontal;
+            meshRenderer.material.SetVector("_Offset", new Vector2(Offset, 0));
+        }
+
+### Parallax
 
 ![Fondo_4](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/6c8c31ed-e0fd-45eb-a8d7-46dc07801556)
 
@@ -642,5 +654,6 @@ of the moving camera.
 
 ![Zoomshish](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/0ad7f125-76d1-42d5-a5ea-00dcd65bd759)
 
+![Change](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/3cfe03cd-8027-4139-bf1d-3f8878ed9f74)
 
 
