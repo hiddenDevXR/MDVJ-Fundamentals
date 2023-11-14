@@ -594,3 +594,19 @@ to stay on the platform by making the platform it's parent when 'OnTriggerEnter2
 
 ![Fondo_5](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/17f57062-ef38-4a17-aab3-ddfc521d2ee6)
 
+![Fondo_Cam_1](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/4d1d2248-1f9a-4099-baac-fabdfabbf51f)
+
+![Fondo_Cam_2](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/3dcc4e7d-861d-476c-b58e-f283a21c8a2f)
+
+![Fondo_Coll_1](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/58a6bbd6-e88e-4407-827b-291809c14259)
+
+![Fondo_Coll_2](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/e50274de-bff6-46d5-9293-df95582b7ff9)
+
+![Group_1](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/5727ef84-7848-46ca-b647-be8032f748ef)
+
+![Group_2](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/b4d67266-c507-4187-bf01-840d64aa200c)
+
+![Zoomshish](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/0ad7f125-76d1-42d5-a5ea-00dcd65bd759)
+
+
+
