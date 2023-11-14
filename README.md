@@ -17,7 +17,7 @@ Unity version 2021.3.24f1
 
 [Introduction to 2D Game Development | Physics and Maps](#introduction-to-2d-game-development--physics-and-maps)
 
-[Introduction to 2D Game Development | Physics and Maps](#introduction-to-2d-game-development--background-and-camera)
+[Introduction to 2D Game Development | Background and Camera](#introduction-to-2d-game-development--background-and-camera)
 
 <a name="act1.1"/>
 
