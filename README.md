@@ -584,9 +584,43 @@ to stay on the platform by making the platform it's parent when 'OnTriggerEnter2
 
 # Introduction to 2D Game Development | Background and Camera
 
+## Background scroll
+
+Implementations of two scrolls methods. The first type has two images, once one gets out of the screen it moves back to the
+edge of the stack so it can be ready to scroll again in front of the camera.
+
 ![Fondo_1](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/2ec99929-1b74-43e5-8e85-bb9fe87714b6)
 
+        void Update()
+        {
+            float step = Time.deltaTime * speedOffset;
+            float horizontal = Input.GetAxis("Horizontal") * step;
+
+            transform.position = new Vector3(transform.position.x + horizontal, 0, transform.position.z);
+
+            if(transform.position.x <= leftLimit)
+            {
+                transform.position = new Vector3(nextImagePoint.position.x, 0f, transform.position.z);
+            }
+        }
+
+The second method the background does not move, is startic, it only changes its position to have at any time one background in front
+of the moving camera.
+
 ![Fondo_2](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/5fb4faa5-48d5-453f-b05e-12c2ff38fa1e)
+
+        public class BackgroundRepeatStatic : MonoBehaviour
+        {
+            float background_w = 10.24f;
+        
+            void Update()
+            {
+                if (Camera.main.transform.position.x >= transform.position.x + background_w)
+                {
+                    transform.position += new Vector3(background_w * 2f, 0f, 0f);
+                }
+            }
+        }
 
 ![Fondo_3](https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/0a69a7ef-23da-4cf6-8aca-c005f6ab2c48)
 
