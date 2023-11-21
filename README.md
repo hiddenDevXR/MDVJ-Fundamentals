@@ -727,6 +727,16 @@ I also learnt how to use the audio mixer. Here is an example of a basic monster 
 
 https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/b7521b73-e5d8-4ff2-89cc-f6da7aefe6ca
 
+By playing around a little more, I think I manage to make an ordinary spark attack into something more menacing.
+
+https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/0dc93851-7e18-471b-af8d-bcfaeb34613e
+
+And changed the mosnter groan to an human one.
+
+https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/737422fc-2c64-488a-88cb-ca0cffef7b36
+
+
+
 
 
 
