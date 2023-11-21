@@ -735,9 +735,31 @@ And changed the mosnter groan to an human one.
 
 https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/737422fc-2c64-488a-88cb-ca0cffef7b36
 
+We also learn how to manage audio from code. In this example we can see a spehere whit a looping audio whit a random
+pitch. This plays by pressing 'P', and stops by pressing 'S'. This implementation was perfect for a basic looping step sfx.
 
+https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/af785a15-14c7-4d4e-9de6-b7b1d842141e
 
-
+        void Update()
+        {
+            float step = Time.deltaTime * speed;
+        
+            if (Input.GetKeyDown(KeyCode.P)) {
+                m_Paused = false;
+                m_AudioSource.Play();
+            }
+        
+            else if(Input.GetKeyDown(KeyCode.S)) {
+                m_Paused = true;
+                m_AudioSource.Stop();
+            }
+        
+            if (!m_Paused)
+            {
+                m_AudioSource.pitch = Random.Range(1f, 3f);
+                transform.position += Vector3.right * step;
+            }        
+        }
 
 
 
