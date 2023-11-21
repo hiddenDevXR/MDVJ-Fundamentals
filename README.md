@@ -714,12 +714,17 @@ A smooth change between cameras using cinemachine is easily achieved by simple t
 
 # Audio and Pooling
 
+## Audio
+
 For this exercise we learn about audio in Unity. First, here is a simple looping audio that plays on awake.
 
 https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/f06f0d21-2c1c-43ab-8112-bbc8b008e2de
 
 Then, I made the audio 3D by changing the Audio source spatial blend. The next example uses
 Dopler: 5, Spread: 100, Min Distance: 5, Max Distance: 100, Volumen Rollof: Linear
+
+By changing the spread and the distance we manage to modidy the behavior of the dopplet effect of the moving sphere.
+Also it looks that it also increses the volume of the audio. Not directly in the component, but sound "closer" to the listener. By using the Unity standar values, the doppler effect occurs almost immediately.
 
 https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/4fc64f49-4fd3-43be-b327-e7fccd389928
 
@@ -728,6 +733,7 @@ I also learnt how to use the audio mixer. Here is an example of a basic monster 
 https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/b7521b73-e5d8-4ff2-89cc-f6da7aefe6ca
 
 By playing around a little more, I think I manage to make an ordinary spark attack into something more menacing.
+This was achieved by chanhging the pitch and adding a little bit of chorus. I still need to invest more time trying and researching how this channels work as I was unable to detect a true difference bwtween channels.
 
 https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/0dc93851-7e18-471b-af8d-bcfaeb34613e
 
@@ -774,6 +780,48 @@ https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/e80febf0-af26-4
             }
         }
 
+## Pooling
+
+For pooling I worked on a system (that still needs polish) that adds items to the pool once the player picks them.
+When an object is collected it is added to the pool and it stop being displayed. Each object has a counter, when it reaches 3 it is destroyed. In the scene it is always at least 1 item. When there is less that 1 items in the scene, at least one the items in the pool returns to the scene.
+
+https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/3064c418-1731-4c14-beda-343977954c26
+
+        public void AddToPool(Item item)
+        {
+        
+            item.index++;
+            item.gameObject.SetActive(false);
+        
+            if (item.index == 3)
+            {
+                if(itemPool.Contains(item))
+                {
+                    itemPool.Remove(item);
+                }
+                gameObject.GetComponent<AudioSource>().PlayOneShot(itemDestroyed, 1f);
+                Destroy(item.gameObject);
+                return;
+            }
+        
+            
+        
+            if (!itemPool.Contains(item))        
+            {
+               if(itemPool.Count < poolMaxSize)
+                {
+                    gameObject.GetComponent<AudioSource>().PlayOneShot(itemBrandNew, 1f);
+                    itemPool.Add(item);             
+                }                
+            }
+        
+            else
+            {
+                gameObject.GetComponent<AudioSource>().PlayOneShot(itemAdded, 1f);
+            }
+        
+            ManageItems();
+        }
 
 
 
