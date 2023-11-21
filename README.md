@@ -761,6 +761,19 @@ https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/af785a15-14c7-4
             }        
         }
 
+In another exaple, I tried to change the audio volume of an immpact sfx based on the velocity of the moving object.
+
+https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/e80febf0-af26-4b0f-809e-1d6ad65b3ca4
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if(collision.gameObject.CompareTag("Obstacle"))
+            {
+                hitVol = speed * 0.1f;
+                m_audioSource.PlayOneShot(m_audioClip, hitVol);
+            }
+        }
+
 
 
 
