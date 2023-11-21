@@ -19,7 +19,7 @@ Unity version 2021.3.24f1
 
 [Introduction to 2D Game Development | Background and Camera](#introduction-to-2d-game-development--background-and-camera)
 
-[Audio and Pooling](#audio_pool)
+[Audio and Pooling](#audio-and-pooling)
 
 <a name="act1.1"/>
 
@@ -710,7 +710,7 @@ A smooth change between cameras using cinemachine is easily achieved by simple t
         }
 
 
-<a name="#audio_pool"/>
+<a name="#audio-and-pooling"/>
 
 # Audio and Pooling
 
@@ -719,14 +719,17 @@ For this exercise we learn about audio in Unity. First, here is a simple looping
 https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/f06f0d21-2c1c-43ab-8112-bbc8b008e2de
 
 Then, I made the audio 3D by changing the Audio source spatial blend. The next example uses
-
-Dopler: 5
-Spread: 100
-Min Distance: 5
-Max Distance: 100
-Volumen Rollof: Linear
+Dopler: 5, Spread: 100, Min Distance: 5, Max Distance: 100, Volumen Rollof: Linear
 
 https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/4fc64f49-4fd3-43be-b327-e7fccd389928
+
+I also learnt how to use the audio mixer. Here is an example of a basic monster "Groan" whit an echo.
+
+https://github.com/hiddenDevXR/MDVJ-Fundamentals/assets/86928162/b7521b73-e5d8-4ff2-89cc-f6da7aefe6ca
+
+
+
+
 
 
 
